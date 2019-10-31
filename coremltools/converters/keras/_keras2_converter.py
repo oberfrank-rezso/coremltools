@@ -500,6 +500,7 @@ def _convert(model,
                     layer_name = keras_layer.activation.__name__
             else:
                 layer_name = type(keras_layer).__name__
+            print('custom_conversion_functions', custom_conversion_functions)
             if layer_name in custom_conversion_functions:
                 custom_spec = custom_conversion_functions[layer_name](keras_layer)
             else:
